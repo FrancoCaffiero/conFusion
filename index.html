@@ -74,7 +74,9 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Login</h4>
-            <button type="button" class="close" data-dismiss="modal">×</button>
+            <button id="loginModalCloseButton" type="button" class="close">
+              ×
+            </button>
           </div>
           <div class="modal-body">
             <form>
@@ -110,9 +112,9 @@
               </div>
               <div class="form-row">
                 <button
+                  id="loginModalCancelButton"
                   type="button"
                   class="btn btn-secondary btn-sm ml-auto"
-                  data-dismiss="modal"
                 >
                   Cancel
                 </button>
@@ -132,7 +134,9 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title">Reserve a Table</h3>
-            <button type="button" class="close" data-dismiss="modal">×</button>
+            <button id="reserveModalCloseButton" type="button" class="close">
+              ×
+            </button>
           </div>
           <div class="modal-body">
             <form>
@@ -209,9 +213,9 @@
               <div class="form-group row">
                 <div class="col-10 offset-md-2">
                   <button
+                    id="reserveModalCancelButton"
                     type="button"
                     class="btn btn-secondary"
-                    data-dismiss="modal"
                   >
                     Cancel
                   </button>
@@ -521,6 +525,20 @@
         });
         $("#reserveButton").click(function () {
           $("#reserveModal").modal();
+        });
+
+        $("#loginModalCloseButton").click(function () {
+          $("#loginModal").modal("hide");
+        });
+        $("#loginModalCancelButton").click(function () {
+          $("#loginModal").modal("hide");
+        });
+
+        $("#reserveModalCloseButton").click(function () {
+          $("#reserveModal").modal("hide");
+        });
+        $("#reserveModalCancelButton").click(function () {
+          $("#reserveModal").modal("hide");
         });
       });
     </script>
